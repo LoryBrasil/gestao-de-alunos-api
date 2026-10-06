@@ -260,3 +260,18 @@ curl -X POST http://localhost:3000/api/alunos/aluno-ana-souza/trabalhos \
 
 > Novos registros criados via API recebem ids no formato UUID (gerados com
 > `crypto.randomUUID()`), diferente dos ids legíveis usados nos dados fake acima.
+
+
+## Testes automatizados de API
+
+Stack: Mocha + Chai + SuperTest, com Dotenv para configuração.
+
+```bash
+cp .env.example .env   # precisa de um MongoDB acessível em MONGODB_URI
+npm test
+```
+
+- `test/helpers/auth.helper.js`: helpers `loginAdmin()` e `loginAluno(email, senha)`.
+- `test/data/fluxo-aluno.json`: massa de dados (Data-Driven Testing).
+- `test/fluxo-aluno.test.js`: admin loga, cadastra aluno e matricula; aluno loga e registra trabalho.
+- `.github/workflows/tests.yml`: executa os testes no GitHub Actions a cada push/PR na `main`.
