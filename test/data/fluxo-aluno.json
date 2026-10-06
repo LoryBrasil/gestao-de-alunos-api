@@ -1,0 +1,28 @@
+[
+  {
+    "cenario": "aluno Diego entrega trabalho de lista de exercícios",
+    "aluno": {
+      "nome": "Diego Teste",
+      "email": "diego.teste@example.com",
+      "matricula": "9001",
+      "senha": "senha123"
+    },
+    "trabalho": {
+      "titulo": "Lista de Exercícios 3",
+      "descricao": "Resolução dos exercícios 1 a 10"
+    }
+  },
+  {
+    "cenario": "aluna Elisa entrega trabalho de pesquisa",
+    "aluno": {
+      "nome": "Elisa Teste",
+      "email": "elisa.teste@example.com",
+      "matricula": "9002",
+      "senha": "outraSenha456"
+    },
+    "trabalho": {
+      "titulo": "Pesquisa sobre Funções",
+      "descricao": "Pesquisa com exemplos do cotidiano"
+    }
+  }
+]
