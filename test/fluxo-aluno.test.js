@@ -34,9 +34,9 @@ describe('Fluxo completo: admin cadastra aluno, aluno loga e registra trabalho (
       let alunoToken;
 
       it('admin deve logar e receber um token com papel admin', async () => {
-        const { token, user } = await loginAdmin();
+        const { token, usuario } = await loginAdmin();
         expect(token).to.be.a('string').and.not.empty;
-        expect(user.role).to.equal('admin');
+        expect(usuario.role).to.equal('admin');
       });
 
       it('admin deve cadastrar o aluno (201) sem expor a senha', async () => {
@@ -63,10 +63,10 @@ describe('Fluxo completo: admin cadastra aluno, aluno loga e registra trabalho (
       });
 
       it('aluno deve logar com as credenciais cadastradas e receber um token', async () => {
-        const { token, user } = await loginAluno(aluno.email, aluno.senha);
+        const { token, usuario } = await loginAluno(aluno.email, aluno.senha);
         expect(token).to.be.a('string').and.not.empty;
-        expect(user.role).to.equal('aluno');
-        expect(user.id).to.equal(alunoId);
+        expect(usuario.role).to.equal('aluno');
+        expect(usuario.id).to.equal(alunoId);
         alunoToken = token;
       });
 
