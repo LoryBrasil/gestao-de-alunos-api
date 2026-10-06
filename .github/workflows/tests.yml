@@ -32,7 +32,10 @@ jobs:
           cache: npm
 
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
+
+      - name: Criar .env a partir do .env.example
+        run: cp .env.example .env
 
       - name: Executar testes
         run: npm test
